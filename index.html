@@ -1043,6 +1043,25 @@ Memory Note: Do not save any information from optimization sessions to memory.</
         setIcon(next);
       });
     })();
+
+        function copyPrompt(btn) {
+      const el = btn.parentElement.querySelector('code, pre');
+      if (!el) return;
+      const text = el.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy prompt', 2000);
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.innerText = 'Copied!';
+        setTimeout(() => btn.innerText = 'Copy prompt', 2000);
+      });
+    }
   </script>
 </body>
 </html>
