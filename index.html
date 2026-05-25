@@ -364,6 +364,48 @@
       background: var(--bg-alt);
     }
 
+    /* PROMPT BLOCK */
+    .prompt-block {
+      position: relative;
+      margin-top: var(--space-4);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      overflow: hidden;
+    }
+    .prompt-block code,
+    .prompt-block pre {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--text-muted);
+      padding: var(--space-5) var(--space-4) var(--space-4);
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .copy-btn {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-3);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-softer);
+      color: var(--text-muted);
+      cursor: pointer;
+      z-index: 2;
+      transition: background var(--transition), color var(--transition), border-color var(--transition);
+    }
+    .copy-btn:hover {
+      background: var(--primary);
+      color: var(--text-inverse);
+      border-color: var(--primary);
+    }
+
     /* TABLES */
     .table-wrap { margin-top: var(--space-3); border-radius: var(--radius-xl); border: 1px solid var(--border); overflow: hidden; }
     table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }
@@ -505,9 +547,9 @@
           <div class="card">
             <div class="card-tag">Full system prompt</div>
             <h3 class="card-title">A 4‑step prompt optimisation layer.</h3>
-<div class="prompt-block">
-          <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
-          <pre class="prompt-text">You are Lyra, a master-level AI prompt optimization specialist. Your mission: transform any user input into precision-crafted prompts that unlock AI's full potential across all platforms.
+            <div class="prompt-block">
+              <button class="copy-btn" onclick="copyPrompt(this)">Copy prompt</button>
+              <pre class="prompt-text">You are Lyra, a master-level AI prompt optimization specialist. Your mission: transform any user input into precision-crafted prompts that unlock AI's full potential across all platforms.
 
 ## THE 4-D METHODOLOGY
 
@@ -589,7 +631,9 @@ Just share your rough prompt and I'll handle the optimization!"
 4. Deliver optimized prompt
 
 Memory Note: Do not save any information from optimization sessions to memory.</pre>
-        </div>
+            </div>
+          </div>
+
           <div class="card">
             <div class="card-tag">Daily usage examples</div>
             <h3 class="card-title">How to run ideas through Lyra.</h3>
@@ -629,7 +673,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
               <div class="list-bullet"><span>Charts with <strong>Chart.js</strong>: category breakdown, month comparison, top expense categories.</span></div>
               <div class="list-bullet"><span>AI‑style saving recommendations based on category shares and spikes.</span></div>
               <div class="list-bullet"><span>Budget planner with per‑category limits and green / amber / red progress bars.</span></div>
-              <div class="list-bullet"><span>“Load sample data” mode so you can demo the app without using real statements.</span></div>
+              <div class="list-bullet"><span>"Load sample data" mode so you can demo the app without using real statements.</span></div>
             </div>
           </div>
 
@@ -638,9 +682,9 @@ Memory Note: Do not save any information from optimization sessions to memory.</
             <h3 class="card-title">From prompt to <code class="code-chip">finsight.html</code>.</h3>
             <div class="list">
               <div class="list-bullet"><span>Ask Lyra in DETAIL mode to refine the FinSight build prompt for your banks and categories.</span></div>
-              <div class="list-bullet"><span>Paste the full prompt into Claude and say: “Generate a complete, single HTML file called <code class="code-chip">finsight.html</code> with inline CSS and JS.”</span></div>
+              <div class="list-bullet"><span>Paste the full prompt into Claude and say: "Generate a complete, single HTML file called <code class="code-chip">finsight.html</code> with inline CSS and JS."</span></div>
               <div class="list-bullet"><span>Save the response as <code class="code-chip">finsight.html</code>, open it in Chrome, and test using the sample data button.</span></div>
-              <div class="list-bullet"><span>If parsing fails for your bank, tell Claude: “My bank is HDFC, here are the column headers — fix the parser regex.”</span></div>
+              <div class="list-bullet"><span>If parsing fails for your bank, tell Claude: "My bank is HDFC, here are the column headers — fix the parser regex."</span></div>
             </div>
           </div>
         </div>
@@ -650,7 +694,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
           <div class="list">
             <div class="list-bullet"><span>Create a new GitHub repo, add <code class="code-chip">finsight.html</code> at the root, and commit.</span></div>
             <div class="list-bullet"><span>In Settings → Pages, select the <code class="code-chip">main</code> branch and root folder. GitHub serves it at a public URL.</span></div>
-            <div class="list-bullet"><span>Share this URL with family or colleagues as “FinSight — built with Claude”.</span></div>
+            <div class="list-bullet"><span>Share this URL with family or colleagues as "FinSight — built with Claude".</span></div>
           </div>
         </aside>
       </div>
@@ -688,10 +732,10 @@ Memory Note: Do not save any information from optimization sessions to memory.</
             <div class="card-tag">How to create and use KIRAN</div>
             <h3 class="card-title">Turn it into your fixed morning ritual.</h3>
             <div class="list">
-              <div class="list-bullet"><span>In Gemini, click <strong>Gems → New Gem</strong>, paste the KIRAN system prompt into Instructions, and name it “Morning Market Advisor”.</span></div>
-              <div class="list-bullet"><span>Every weekday at ~7:30 AM, open the Gem and type: “Good morning KIRAN, what’s today looking like?”</span></div>
+              <div class="list-bullet"><span>In Gemini, click <strong>Gems → New Gem</strong>, paste the KIRAN system prompt into Instructions, and name it "Morning Market Advisor".</span></div>
+              <div class="list-bullet"><span>Every weekday at ~7:30 AM, open the Gem and type: "Good morning KIRAN, what's today looking like?"</span></div>
               <div class="list-bullet"><span>Read the brief in 3–5 minutes, note key levels, and compare with live action once the market opens.</span></div>
-              <div class="list-bullet"><span>In the evening, ask: “KIRAN, how did the morning watchlist do today?” to close the loop.</span></div>
+              <div class="list-bullet"><span>In the evening, ask: "KIRAN, how did the morning watchlist do today?" to close the loop.</span></div>
             </div>
           </div>
         </div>
@@ -701,7 +745,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
           <div class="list">
             <div class="list-bullet"><span>KIRAN always reminds you: this is educational only, not investment advice.</span></div>
             <div class="list-bullet"><span>Risk profiles (Conservative / Moderate / Aggressive) guide how it talks about instruments.</span></div>
-            <div class="list-bullet"><span>If you ask “Should I buy X?”, it explains how to analyse X instead of saying yes/no.</span></div>
+            <div class="list-bullet"><span>If you ask "Should I buy X?", it explains how to analyse X instead of saying yes/no.</span></div>
           </div>
         </aside>
       </div>
@@ -720,9 +764,9 @@ Memory Note: Do not save any information from optimization sessions to memory.</
         <div class="section-body-single">
           <div class="card">
             <div class="card-tag">Workflow overview</div>
-            <h3 class="card-title">From “rambling into phone” to prioritised action list.</h3>
+            <h3 class="card-title">From "rambling into phone" to prioritised action list.</h3>
             <p>
-              Instead of buying yet another productivity app, you can use your phone’s built‑in
+              Instead of buying yet another productivity app, you can use your phone's built‑in
               voice input plus Claude to convert raw thoughts into a structured task list with priorities,
               time estimates, and owners.
             </p>
@@ -758,7 +802,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
           <div class="section-eyebrow">Step 5 · Learn with AI</div>
           <h2 class="section-title">NotebookLM — a private <span>AI study partner</span>.</h2>
         </div>
-        <div class="section-kicker">Goal: build a topic‑specific second brain, starting with “How to use AI”.</div>
+        <div class="section-kicker">Goal: build a topic‑specific second brain, starting with "How to use AI".</div>
       </div>
       <div class="section-body">
         <div class="section-body-single">
@@ -774,7 +818,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
               <div class="list-bullet"><span>Add videos like Matt Wolfe and Andrej Karpathy, Claude usage guides, prompting tutorials, and your own project docs.</span></div>
               <div class="list-bullet"><span>Use Audio Overview to generate a podcast‑style summary of your sources for commuting.</span></div>
               <div class="list-bullet"><span>Use Study Guide, Briefing Doc, and Mind Map to turn raw content into structured learning materials.</span></div>
-              <div class="list-bullet"><span>Ask questions like “What did these sources NOT cover?” to discover gaps in your understanding.</span></div>
+              <div class="list-bullet"><span>Ask questions like "What did these sources NOT cover?" to discover gaps in your understanding.</span></div>
             </div>
           </div>
 
@@ -784,7 +828,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
             <div class="list">
               <div class="list-bullet"><span>Pick a topic (e.g. AI agents), add 3–5 good articles or videos to NotebookLM.</span></div>
               <div class="list-bullet"><span>Generate an Audio Overview and listen once.</span></div>
-              <div class="list-bullet"><span>Ask: “What are the main frameworks and trade‑offs mentioned here?” and “What did these sources miss?”</span></div>
+              <div class="list-bullet"><span>Ask: "What are the main frameworks and trade‑offs mentioned here?" and "What did these sources miss?"</span></div>
               <div class="list-bullet"><span>Add the missing sources NotebookLM suggests, then repeat every week. The notebook becomes your curated knowledge base.</span></div>
             </div>
           </div>
@@ -821,7 +865,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
                   <tr><td>Liam Johnston</td><td><a href="https://www.instagram.com/liamjohnston.ai" target="_blank">@liamjohnston.ai</a></td><td>Structured carousels on AI concepts and use cases.</td></tr>
                   <tr><td>Rahul Yera</td><td><a href="https://www.instagram.com/rahulyeraai" target="_blank">@rahulyeraai</a></td><td>Tools, prompts, and examples for everyday work.</td></tr>
                   <tr><td>Sanidhya</td><td><a href="https://www.instagram.com/sanidhya.ai" target="_blank">@sanidhya.ai</a></td><td>Prompt engineering and app‑building with AI.</td></tr>
-                  <tr><td>Vish</td><td><a href="https://www.instagram.com/v.i.s.h.ai" target="_blank">@v.i.s.h.ai</a></td><td>Hands‑on “I built X with AI” style content.</td></tr>
+                  <tr><td>Vish</td><td><a href="https://www.instagram.com/v.i.s.h.ai" target="_blank">@v.i.s.h.ai</a></td><td>Hands‑on "I built X with AI" style content.</td></tr>
                   <tr><td>Taki</td><td><a href="https://www.instagram.com/taki.gpt" target="_blank">@taki.gpt</a></td><td>Short‑form tutorials, hacks, and prompt ideas.</td></tr>
                   <tr><td>Vaibhav Sisinty</td><td><a href="https://www.instagram.com/vaibhavsisinty" target="_blank">@vaibhavsisinty</a></td><td>AI + marketing, growth, and business workflows.</td></tr>
                 </tbody>
@@ -833,7 +877,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
             <div class="card-tag">YouTube · Claude focus</div>
             <h3 class="card-title">Start here: Claude for beginners.</h3>
             <p>
-              These are hand‑picked beginner videos that walk through Claude’s interface, basic
+              These are hand‑picked beginner videos that walk through Claude's interface, basic
               workflows, and how to get real work done.
             </p>
             <div class="list" style="margin-top:var(--space-3);">
@@ -903,7 +947,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
                 <div class="list">
                   <div class="list-bullet"><span>Create a free cluster and copy the connection string.</span></div>
                   <div class="list-bullet"><span>Add <code class="code-chip">MONGODB_URI</code> as an environment variable in Vercel or Render.</span></div>
-                  <div class="list-bullet"><span>Tell Claude: “Wire this app to MongoDB Atlas using <code class="code-chip">process.env.MONGODB_URI</code> and Mongoose.”</span></div>
+                  <div class="list-bullet"><span>Tell Claude: "Wire this app to MongoDB Atlas using <code class="code-chip">process.env.MONGODB_URI</code> and Mongoose."</span></div>
                 </div>
               </div>
             </div>
@@ -920,27 +964,27 @@ Memory Note: Do not save any information from optimization sessions to memory.</
               </thead>
               <tbody>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/anthropics/skills" target="_blank" rel="noreferrer">anthropics/skills</a></td>
+                  <td><a href="https://github.com/anthropics/skills" target="_blank" rel="noreferrer">anthropics/skills</a></td>
                   <td>Official public repo of Claude Agent Skills. Learn how <code class="code-chip">SKILL.md</code>, tools, and code are structured so Claude can discover and use them.</td>
                 </tr>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/JuliusBrussee/caveman" target="_blank" rel="noreferrer">JuliusBrussee/caveman</a></td>
-                  <td>Claude Code skill that “talks like caveman” to cut output tokens and includes compression utilities for prompts and code comments.</td>
+                  <td><a href="https://github.com/JuliusBrussee/caveman" target="_blank" rel="noreferrer">JuliusBrussee/caveman</a></td>
+                  <td>Claude Code skill that "talks like caveman" to cut output tokens and includes compression utilities for prompts and code comments.</td>
                 </tr>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/langchain-ai/langchain" target="_blank" rel="noreferrer">langchain-ai/langchain</a></td>
+                  <td><a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noreferrer">langchain-ai/langchain</a></td>
                   <td>Framework for chaining LLM calls, tools, and RAG. Use it when you move from single prompts to full agent workflows.</td>
                 </tr>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/danny-avila/LibreChat" target="_blank" rel="noreferrer">danny-avila/LibreChat</a></td>
+                  <td><a href="https://github.com/danny-avila/LibreChat" target="_blank" rel="noreferrer">danny-avila/LibreChat</a></td>
                   <td>Self‑hosted chat UI that supports Claude, GPT, and others in one place. Great for testing prompt strategies across models.</td>
                 </tr>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/open-webui/open-webui" target="_blank" rel="noreferrer">open-webui/open-webui</a></td>
+                  <td><a href="https://github.com/open-webui/open-webui" target="_blank" rel="noreferrer">open-webui/open-webui</a></td>
                   <td>Beautiful interface for local models (Ollama etc.). Combine with token‑saving patterns to cut API spend.</td>
                 </tr>
                 <tr>
-                  <td><a href="https://github.comhttps://github.com/Hannibal046/Awesome-LLM" target="_blank" rel="noreferrer">Hannibal046/Awesome-LLM</a></td>
+                  <td><a href="https://github.com/Hannibal046/Awesome-LLM" target="_blank" rel="noreferrer">Hannibal046/Awesome-LLM</a></td>
                   <td>Curated index of major LLM papers, tools, and resources. Use it as your research hub.</td>
                 </tr>
               </tbody>
@@ -981,7 +1025,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
                 </tr>
                 <tr>
                   <td>Morning stock overview (India)</td>
-                  <td>Gemini “KIRAN” Gem</td>
+                  <td>Gemini "KIRAN" Gem</td>
                   <td>Get a structured market brief every morning, purely for education.</td>
                 </tr>
                 <tr>
@@ -1044,7 +1088,7 @@ Memory Note: Do not save any information from optimization sessions to memory.</
       });
     })();
 
-        function copyPrompt(btn) {
+    function copyPrompt(btn) {
       const el = btn.parentElement.querySelector('code, pre');
       if (!el) return;
       const text = el.innerText;
